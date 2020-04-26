@@ -23,13 +23,13 @@ def downloadwebpage(url):
     text = article.text
     return text
 
-def sum_it_up(url):
+def sum_it_up(content_text):
     # url = 'https://en.wikipedia.org/wiki/Elon_Musk'
 
-    content = downloadwebpage(url)
+    #content = downloadwebpage(url)
 
     # remove the reference numbers
-    re.sub(r'\[.+\]', '', content)
+    re.sub(r'\[.+\]', '', content_text)
 
     # finds a list of 10 important keywords, usses lemmetatization instead of stemming
     k = keywords(content, words=10, lemmatize=True).split('\n')
